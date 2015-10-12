@@ -17,12 +17,17 @@ with open('/etc/group','r') as group_file:
         group_assoc[group_data[2]] = group_data[0]
 
 
-user_dict = {}
+user_list = []
 with open('/etc/passwd','r') as user_file:
     for user in user_file:
         user_data = user.split(":")
-        user_dict[user_data[0]] = { "group": group_assoc[user_data[3]], "sudo": is_sudo(user_data[0])}
+        user_list.append({ 
+            'username': user_data[0], 
+            "group": group_assoc[user_data[3]], 
+            "sudo": is_sudo(user_data[0]),
+            "hostname": hostname,
+            "ip": ip
+            })
 
-json_dump = json.dumps({'ip': ip, 'hostname': hostname, 'users': user_dict})
-requests.post('http://127.0.0.1:5000/api/', json=json_dump)
+requests.post('http://10.20.11.153:5000/api/', json=json.dumps(user_list))
 

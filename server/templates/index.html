@@ -1,7 +1,11 @@
 <html>
 <title>Testing is a thing to do! </title>
 <body>
-{% for i in range(0,number) %}
-<h1> {{i}} </h1>
+{% for i in user_list%}
+<p><h3> {{i['username']}}</h3>
+<b>Sudo:</b> {{i['sudo']}}
+<b>Host:</b> {{i['hostname']}}
+<b>IP:</b> {{i['ip']}}
+<b>Group:</b> {{i['group']}}
 {% endfor %}
 </body></html>
