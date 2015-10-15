@@ -1,0 +1,21 @@
+{% for consol in all_users %}
+{% for k in  consol.keys() %}
+<p><a href="/user/{{k}}"><h3>{{k}}</a></h3>
+  <table border="1" style="width:27%">
+    <tr>
+      <th>Hostname</th>
+      <th>IP</th>
+      <th>Group</th>
+      <th>Sudo</th>
+    </tr>
+  {% for row in consol[k] %}
+  <tr>
+    <td><a href="/host/{{row[0]}}">{{row[0]}}</a></td>
+    <td>{{row[1]}}</td>
+    <td>{{row[2]}}</td>
+    <td>{{row[3]}}</td>
+  </tr>
+  {% endfor %}</p>
+</table>
+{% endfor %}
+{% endfor %}

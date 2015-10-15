@@ -1,0 +1,14 @@
+<table border="1" style="width:20%">
+  <tr>
+    <th>Username</th>
+    <th>Group</th>
+    <th>Sudo?</th>
+  </tr>
+  {% for info in host_info %}
+  <tr>
+    <td><a href="/user/{{info['username']}}">{{info['username']}}</a></td>
+    <td>{{info['group']}}</td>
+    <td>{{info['sudo']}}</td>
+  </tr>
+  {% endfor %}
+</table>

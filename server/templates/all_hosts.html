@@ -1,0 +1,21 @@
+{% for consol in all_hosts %}
+{% for k in  consol.keys() %}
+  <p><h3>{{k}}</h3>
+  <table border="1" style="width:27%">
+    <tr>
+      <th>Username</th>
+      <th>IP</th>
+      <th>Group</th>
+      <th>Sudo</th>
+    </tr>
+  {% for row in consol[k] %}
+  <tr>
+    <td>{{row[0]}}</td>
+    <td>{{row[1]}}</td>
+    <td>{{row[2]}}</td>
+    <td>{{row[3]}}</td>
+  </tr>
+  {% endfor %}</p>
+</table>
+{% endfor %}
+{% endfor %}

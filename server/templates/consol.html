@@ -1,7 +1,0 @@
-{% for k,v in consol.iteritems() %}
-  <h3>{{k}}</h3>
-  <b>'Hostname' 'IP' 'Sudo' </b>
-  {% for row in v %}
-    <p>{% for i in row %}     {{i}}{% endfor %} </p>
-  {% endfor %}
-{% endfor %}
