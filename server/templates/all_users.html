@@ -1,7 +1,8 @@
 {% for consol in all_users %}
 {% for k in  consol.keys() %}
 <p><a href="/user/{{k}}"><h3>{{k}}</a></h3>
-  <table border="1" style="width:27%">
+  <div style="text-align: center;"> 
+  <table border="1" style="width:35%">
     <tr>
       <th>Hostname</th>
       <th>IP</th>
@@ -16,6 +17,6 @@
     <td>{{row[3]}}</td>
   </tr>
   {% endfor %}</p>
-</table>
+</table></div>
 {% endfor %}
 {% endfor %}

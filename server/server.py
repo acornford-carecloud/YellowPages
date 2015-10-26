@@ -1,9 +1,10 @@
+#!/usr/bin/python
 from flask import Flask, render_template, request
 import json
 import pymongo
 import socket
 
-server = Flask('app')
+server = Flask(__name__)
 user_collection = pymongo.MongoClient().users.host_users
 
 def ip(hostname):

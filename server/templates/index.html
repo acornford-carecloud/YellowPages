@@ -1,11 +1,5 @@
 <html>
-<title>Testing is a thing to do! </title>
-<body>
-{% for i in user_list%}
-<p><h3> {{i['username']}}</h3>
-<b>Sudo:</b> {{i['sudo']}}
-<b>Host:</b> {{i['hostname']}}
-<b>IP:</b> {{i['ip']}}
-<b>Group:</b> {{i['group']}}
-{% endfor %}
+<body><a href="/hosts">All Hosts</a>----|----<a href="/users">All Users</a>
+{% block content %}{% endblock %}
 </body></html>
+
