@@ -16,10 +16,7 @@ def is_system_user(user):
             'backup','irc','postgres','gnats','syslog','mongodb','landscape',
             'pollinate','list','mail','libuuid','messagebus','proxy','openldap',
             'app']
-    if user in system_users:
-        return True
-    else:
-        return False
+    return True if user in system_users else False
 
 @server.route('/api/', methods=['POST'])
 def db_update():
